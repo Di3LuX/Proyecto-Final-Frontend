@@ -12,6 +12,12 @@ function Home() {
   if (decodedToken === null) {
     decodedToken = "";
   }
+  
+  let member = (
+    <p className="fs-3 welcome">
+      Welcome {decodedToken.name}, what do you want to buy today?
+    </p>
+  );
 
   let foreigner = (
     <p className="fs-3 welcome">
@@ -19,11 +25,6 @@ function Home() {
     </p>
   );
 
-  let member = (
-    <p className="fs-3 welcome">
-      Welcome {decodedToken.name}, what do you want to buy today?
-    </p>
-  );
 
   return (
     <div>
@@ -44,6 +45,9 @@ function Home() {
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col col-lg-6 d-flex justify-content-around">
+                  <button onClick={() => navigate("/vehicles")}>Vehiculos</button>
+                  <button onClick={() => navigate("/estates")}>Inmuebles</button>
+                  <button onClick={() => navigate("/objects")}>Objetos</button>
                   </div>
                 </div>
               </div>
