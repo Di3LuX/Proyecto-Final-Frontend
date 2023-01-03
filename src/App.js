@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/Home/Home";
+import Register from "./containers/Register/Register";
 // import Login from "./containers/Login/Login";
-// import Register from "./containers/Register/Register";
 // import Profile from "./containers/Profile/Profile";
 // import ProfileModify from "./containers/ProfileModify/ProfileModify";
 // import ProfileDestroy from "./containers/ProfileDestroy/ProfileDestroy";
@@ -16,7 +16,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/register" element={<Register />} />
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/vehicles" element={<Vehicles />} /> */}
           {/* <Route path="/estates" element={<Estates />} /> */}
