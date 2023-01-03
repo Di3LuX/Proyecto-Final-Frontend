@@ -7,17 +7,17 @@
 }
 
 .links {
-  color: green;
+  color: greenyellow;
   font-size: 1.5em;
   cursor: pointer;
   transition: color 1s linear;
-  text-shadow: 0 0 15px green;
+  text-shadow: 0 0 15px black;
 }
 
 .links:hover {
   transition: color 1s linear;
   color: green;
-  text-shadow: 0 0 15px green;
+  text-shadow: 0 0 15px greenyellow;
 }
 
 .listDesign {
@@ -64,10 +64,10 @@
 }
 
 .dropdown-item:active {
-  background-color: green !important;
+  background-color: red !important;
 }
 .dropdown-item:hover {
-  background-color: green !important;
+  background-color: red !important;
 }
 
 @media (max-width: 800px) {
@@ -79,12 +79,12 @@
 
 @keyframes colorChange {
   from {
-    color: green;
-    text-shadow: 0 0 15px green;
+    color: greenyellow;
+    text-shadow: 0 0 15px yellow;
   }
 
   to {
-    color: green;
-    text-shadow: 0 0 15px green;
+    color: burlywood;
+    text-shadow: 0 0 15px yellow;
   }
 }

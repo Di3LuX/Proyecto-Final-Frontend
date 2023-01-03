@@ -1,0 +1,14 @@
+.errorInput {
+  color: red;
+}
+
+.colortxt {
+  animation: colorChange 5s infinite alternate;
+  color: #9700cc;
+  cursor: pointer;
+}
+
+.colortxt2 {
+  animation: colorChange 5s infinite alternate;
+  color: #9700cc;
+}

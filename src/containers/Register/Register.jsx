@@ -129,7 +129,7 @@ function Register() {
       userReduxCredentials?.credentials?.token !== undefined ||
       localStorage.getItem("jwt") !== null
     ) {
-      navigate("/");
+      // navigate("/");
     }
   });
 
