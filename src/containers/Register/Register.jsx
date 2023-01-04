@@ -129,7 +129,7 @@ function Register() {
       userReduxCredentials?.credentials?.token !== undefined ||
       localStorage.getItem("jwt") !== null
     ) {
-      // navigate("/");
+      navigate("/");
     }
   });
 
@@ -208,10 +208,9 @@ function Register() {
 
           <button
             className={
-              "CyberButtonColor d-flex align-items-center GlitchButtonReflex"
+              "d-flex align-items-center GlitchButtonReflex"
             }
-            text={"Register"}
-            onClick={sendBody}>Envia el formulario!
+            text={"Register"}>Envia el formulario!
           </button>
         </div>
       </div>

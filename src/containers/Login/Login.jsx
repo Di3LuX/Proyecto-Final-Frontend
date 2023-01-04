@@ -12,6 +12,7 @@ function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const userLogin = async (body) => {
     let resp = await axios.post(`${API}/users/login`, body);
     if (resp.data === "Password or email incorrect") {
@@ -24,15 +25,17 @@ function Login() {
         ...prevState,
         noEmail: "",
       }));
-
+      
       let jwt = resp.data.jwt;
       let credentials = {
         token: jwt,
       };
-
       dispatch(login({ credentials: credentials }));
       localStorage.setItem("jwt", credentials.token);
-      // navigate("/");
+      navigate("/");
+      console.log(jwt)
+      console.log(credentials)
+      console.log(resp.data.jwt)
     }
   };
 
@@ -65,16 +68,14 @@ function Login() {
 
   const submitLogin = (e) => {
     e.preventDefault();
-
     if (validateBody(body)) {
       userLogin(body);
     } else {
       setUserError((prevState) => ({
         ...prevState,
         noEmail:
-          "We can't send your info to login.",
+          "Your info is wrong",
       }));
-
     }
   };
 
@@ -137,14 +138,14 @@ function Login() {
 
             <div className="errorInput mb-3"> {userError.passwordError} </div>
             <div className="boton mt-5">
-              <button
+              <div
                 text={"Login"}
                 className={
                   "d-flex align-items-center GlitchButtonReflex"
                 }
                 onClick={(e) => submitLogin(e)}
               >Logeate!
-              </button>
+              </div>
             </div>
             <h3 className="text-light text-center mb-5 mt-5">
               If you don't have account, please{" "}
