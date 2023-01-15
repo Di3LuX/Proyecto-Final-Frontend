@@ -1,0 +1,11 @@
+.bgImage{
+  background-image: url(../../../public/wallpaper.jpg);
+  background-size: cover;
+}
+
+.h1main{
+  color: black;
+  background-color: green;
+  border-radius: 0.2em;
+  background: radial-gradient(green, transparent)
+}

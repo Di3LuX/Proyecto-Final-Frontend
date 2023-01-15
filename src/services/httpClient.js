@@ -2,7 +2,7 @@ import axios from "axios";
 
 const jwt = localStorage.getItem("jwt");
 
-export const API = "http://localhost:3000";
+export const API = "https://proyecto-final-backend-production-a63f.up.railway.app";
 
 
 export const httpGet = async (content, target, criteria) => {

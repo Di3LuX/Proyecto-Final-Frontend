@@ -1,9 +1,10 @@
-.inputWidth {
-  width: 20vw;
+.mainContainer{
+  background-image: url(../../../public/login-register.jpg);
+  background-size: cover;
 }
 
-.margin-top-10vh {
-  margin-top: 10vh;
+.inputWidth {
+  width: 20vw;
 }
 
 .errorInput {

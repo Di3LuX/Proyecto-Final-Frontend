@@ -1,0 +1,30 @@
+.contentCard {
+  list-style: none;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: opacity 300ms;
+}
+
+.contentCard:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.contentImage {
+  border-radius: 10%;
+  background-color: azure;
+  -webkit-box-shadow: 37px 26px 64px -16px rgba(87, 87, 87, 0.56);
+  -moz-box-shadow: 37px 26px 64px -16px rgba(87, 87, 87, 0.56);
+  box-shadow: 37px 26px 64px -16px rgba(87, 87, 87, 0.56);
+}
+
+@media (max-width: 560px) {
+  .contentImage {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* .shadow{
+
+} */

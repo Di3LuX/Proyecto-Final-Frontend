@@ -136,17 +136,16 @@ function Register() {
   return (
     <form
       onSubmit={sendBody}
-      className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center margin-top-10vh">
+      className="mainContainer container-fluid bg-black vh-100 d-flex justify-content-center align-items-center margin-top-10vh">
       <div className="row">
         <div className="col-12 d-flex flex-column justify-content-center align-items-center">
 
           <h1 className="text-light mb-3">
-            Registrate bro! no quieres ser guai?
+            Register on the largest buying and selling website in the world!
           </h1>
 
           <h3 className="text-light mb-5">
-            Estas a puntito de entrar en un mercado que mueve millones... {" "}
-            <span className="colortxt2">BankArrota</span>
+            You are about to enter a market that moves millions... {" "}
           </h3>
 
           <div className="errorInput mb-0 ft-5">
@@ -161,7 +160,7 @@ function Register() {
             onChange={(e) => { inputHandler(e); }}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "name")}
             type="text"
-            placeholder="Introduce tu nombre de usuario"
+            placeholder="Introduce your username"
           />
           <div className="errorInput mb-3 ft-5"> {userError.usernameError} </div>
 
@@ -171,7 +170,7 @@ function Register() {
             onChange={(e) => inputHandler(e)}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "name")}
             type="text"
-            placeholder="Introduce tu nombre real"
+            placeholder="Introduce your real name"
           />
           <div className="errorInput mb-3"> {userError.nameError} </div>
 
@@ -181,7 +180,7 @@ function Register() {
             onChange={(e) => inputHandler(e)}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
             type="text"
-            placeholder="Introduce tu dirección"
+            placeholder="Introduce your adress"
           />
           <div className="errorInput mb-3"> {userError.locationError} </div>
 
@@ -191,7 +190,7 @@ function Register() {
             onChange={(e) => inputHandler(e)}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
             type="email"
-            placeholder="Introduce tu E-mail"
+            placeholder="Introduce your E-mail"
           />
           <div className="errorInput mb-3"> {userError.emailError} </div>
 
@@ -202,16 +201,16 @@ function Register() {
               errorHandler(e.target.name, e.target.value, "password")
             }
             type="password"
-            placeholder="Contraseña"
+            placeholder="Introduce your password"
           />
           <div className="errorInput mb-3"> {userError.passwordError} </div>
 
-          <button
+          <div
             className={
-              "d-flex align-items-center GlitchButtonReflex"
+              "links d-flex align-items-center GlitchButtonReflex"
             }
-            text={"Register"}>Envia el formulario!
-          </button>
+            text={"Register"}>Register!
+          </div>
         </div>
       </div>
     </form>

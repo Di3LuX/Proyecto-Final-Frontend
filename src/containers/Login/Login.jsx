@@ -25,7 +25,7 @@ function Login() {
         ...prevState,
         noEmail: "",
       }));
-      
+
       let jwt = resp.data.jwt;
       let credentials = {
         token: jwt,
@@ -99,7 +99,7 @@ function Login() {
   return (
     <div className="container-fluid bg-black">
       <form
-        className="bg-black vh-100 d-flex justify-content-center align-items-center  mt-lg-0"
+        className="mainContainer bg-black vh-100 d-flex justify-content-center align-items-center  mt-lg-0"
         onSubmit={(e) => submitLogin(e)}
       >
         <div className="row mt-5 justify-content-center">
@@ -141,20 +141,16 @@ function Login() {
               <div
                 text={"Login"}
                 className={
-                  "d-flex align-items-center GlitchButtonReflex"
+                  "links d-flex align-items-center"
                 }
                 onClick={(e) => submitLogin(e)}
-              >Logeate!
+              >Login!
               </div>
             </div>
             <h3 className="text-light text-center mb-5 mt-5">
-              If you don't have account, please{" "}
+              If you don't have account yet, please{" "}
               <span className="colortxt" onClick={() => navigate("/register")}>
                 register
-              </span>{" "}
-              on{" "}
-              <span className="colortxt" onClick={() => navigate("/register")}>
-                BankArrota
               </span>{" "}
               for <span className="colortxt2"> FREE!</span>
             </h3>
