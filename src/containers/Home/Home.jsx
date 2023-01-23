@@ -2,9 +2,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useJwt } from "react-jwt";
+
 import "./Home.css";
 
 function Home() {
+
   const navigate = useNavigate();
 
   const localStorageToken = localStorage.getItem("token");
@@ -14,7 +16,7 @@ function Home() {
   }
   let member = (
     <p className="fs-3 welcome">
-      Welcome {decodedToken.name}, what do you want to buy today?
+      Welcome {decodedToken.user.name}, what do you want to buy today?
     </p>
   );
 
@@ -23,14 +25,16 @@ function Home() {
     You need an account to buy our stuff!
     </p>
   );
-
-
+  // console.log(decodedToken.user)
+  // console.log(decodedToken.user.name)
+  // console.log(decodedToken.user.role_id)
+  // console.log(decodedToken.user.email)
   return (
     <div>
-      <div className="container-fluid bg-black vh-100 d-flex flex-column align-items-center justify-content-around bgImage">
-        <div className="row mt-5 mt-lg-0">
-          <div className="col-12 d-flex align-items-center justify-content-center">
-            <h1 className="h1main mb-5">
+      <div className="container-fluid vh-100 d-flex align-items-center justify-content-around bgImage">
+        <div className="homeImg row">
+          <div className="h1main d-flex align-items-center justify-content-center">
+            <h1>
               Let's begin
             </h1>
           </div>

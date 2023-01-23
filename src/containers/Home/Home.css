@@ -5,7 +5,15 @@
 
 .h1main{
   color: black;
+  height: 10vh;
   background-color: green;
   border-radius: 0.2em;
   background: radial-gradient(green, transparent)
+}
+
+.welcome{
+  height: 10vh;
+  background-color: green;
+  background: radial-gradient(green, transparent)
+
 }

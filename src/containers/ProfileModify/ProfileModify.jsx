@@ -17,15 +17,15 @@ function ProfileModify() {
   let { decodedToken } = useJwt(localStorageToken);
 
   const [user, setUser] = useState({
+    username: "",
     name: "",
-    surname: "",
-    address: "",
+    location: "",
   });
 
   const [userError, setUserError] = useState({
     nameError: "",
-    surnameError: "",
-    addressError: "",
+    usernameError: "",
+    locationError: "",
     nocompletedError: "",
   });
 
@@ -34,9 +34,9 @@ function ProfileModify() {
   }
 
   const body = {
+    username: user.username,
     name: user.name,
-    surname: user.surname,
-    address: user.address,
+    location: user.location,
     email: decodedToken.user.email,
   };
 
@@ -60,11 +60,11 @@ function ProfileModify() {
   let validateInputs = (body) => {
     if (
       body.name !== "" &&
-      body.surname !== "" &&
-      body.address !== "" &&
+      body.username !== "" &&
+      body.location !== "" &&
       userError.nameError === "" &&
-      userError.surnameError === "" &&
-      userError.addressError === ""
+      userError.usernameError === "" &&
+      userError.locationError === ""
     ) {
       return true;
     }

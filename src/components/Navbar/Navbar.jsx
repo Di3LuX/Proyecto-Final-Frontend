@@ -27,7 +27,7 @@ function Navbar() {
   }
 
   const admin = () => {
-    if (decodedToken.role_id === 1) {
+    if (decodedToken.user.role_id === 1) {
       return (
         <Dropdown.Item
           onClick={() => navigate("/profileAdmin")}
@@ -49,18 +49,18 @@ function Navbar() {
     return (
       <div className="navbarDesign container-fluid fixed-top">
         <div className=" row justify-content-around">
-          <div className="col-3 col-lg-1 justify-content-center d-flex align-items-center ps-0 mt-0  ps-lg-3">
+          <div className="col col-lg-1 justify-content-center d-flex align-items-center ps-0 mt-0  ps-lg-3">
           </div>
 
-          <div className="col-3 col-lg-1 d-xl-flex align-items-center d-none  justify-content-center pe-0 ps-0 pe-lg-5 mt-3 ">
+          <div className="col d-xl-flex align-items-center d-none  justify-content-center pe-0 ps-0 pe-lg-5 mt-3 ">
             <h1 onClick={() => navigate("/")} className="cursor-pointer">
               Home
             </h1>
           </div>
 
-          <div className="col-9 col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
+          <div className="col col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
             <ul className="listDesign d-flex justify-content-center">
-              <li className="pink fontsize1-5em ms-2">{decodedToken.name}</li>
+              <li className="pink fontsize1-5em ms-2">{decodedToken.user.name}</li>
               <Dropdown>
                 <Dropdown.Toggle
                   className="dropDownDesign"
@@ -109,17 +109,17 @@ function Navbar() {
 
         <div className="col-3 col-lg-1 d-xl-flex align-items-center d-none  justify-content-center pe-0 ps-0 pe-lg-5 mt-3 ">
           <h1 onClick={() => navigate("/")} className="cursor-pointer">
-            Home
+            BankArrota
           </h1>
         </div>
 
         <div className="col-9 col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
           <ul className="listDesign d-flex justify-content-center">
             <li onClick={() => navigate("/login")} className="links">
-              Login
+              Login 
             </li>
             <li onClick={() => navigate("/register")} className="links">
-              Register
+              Register 
             </li>
           </ul>
         </div>

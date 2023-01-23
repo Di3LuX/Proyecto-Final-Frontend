@@ -6,15 +6,14 @@ import { useDispatch } from "react-redux";
 import "./Profile.css";
 
 function Profile() {
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const localStorageToken = localStorage.getItem("token");
   let { decodedToken } = useJwt(localStorageToken);
   if (decodedToken === null) {
-    decodedToken = { name: "" };
+    decodedToken = "";
   }
-
   const logout = () => {
     dispatch(logout({ credentials: {} }));
     localStorage.removeItem("token");
@@ -24,7 +23,8 @@ function Profile() {
     navigate("/");
   }
 
-  if (decodedToken.user.role_id === 2) {
+  console.log(decodedToken)
+  if (decodedToken.user.role_id === 3) {
     return (
       <div className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
@@ -36,19 +36,19 @@ function Profile() {
             <button text={"Modify profile"}
               onClick={() => navigate("/profilemodify")}
               className={"buttonColor d-flex align-items-center "}>
-              modifica tu perfil
+              Modify your info
             </button>
 
             <button text={"Delete account"}
               onClick={() => navigate("/profiledestroy")}
               className={"d-flex align-items-center buttonColorRed1"}>
-                borra tu cuenta
+              Destroy your Acount
             </button>
 
             <button onClick={() => logout()}
               className={"d-flex align-items-center buttonColorRed2 GlitchButtonReflex"}
               text={"Log out"}>
-                logout
+              Au revoir
             </button>
 
           </div>
@@ -67,13 +67,13 @@ function Profile() {
             <button text={"Modify profile"}
               onClick={() => navigate("/profilemodify")}
               className={"ButtonColor d-flex align-items-center "}>
-                modifica tu perfil
+              Modify your info
             </button>
 
             <button onClick={() => logout()}
               className={"d-flex align-items-center ButtonColorRed2 GlitchButtonReflex"}
               text={"Log out"}>
-                logout
+              Arrivederci
             </button>
           </div>
         </div>
@@ -81,4 +81,5 @@ function Profile() {
     );
   }
 }
+
 export default Profile;
