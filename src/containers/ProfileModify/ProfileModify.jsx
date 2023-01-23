@@ -37,7 +37,7 @@ function ProfileModify() {
     name: user.name,
     surname: user.surname,
     address: user.address,
-    email: decodedToken.email,
+    email: decodedToken.user.email,
   };
 
   const updateUser = async (e) => {

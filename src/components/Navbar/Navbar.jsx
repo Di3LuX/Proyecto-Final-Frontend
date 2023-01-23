@@ -27,7 +27,7 @@ function Navbar() {
   }
 
   const admin = () => {
-    if (decodedToken.rolIdRol === 1) {
+    if (decodedToken.role_id === 1) {
       return (
         <Dropdown.Item
           onClick={() => navigate("/profileAdmin")}
@@ -40,7 +40,6 @@ function Navbar() {
       return "";
     }
   };
-
   if (
     userReduxCredentials?.credentials?.token !== undefined ||
     localStorage.getItem("token") !== null

@@ -12,10 +12,9 @@ function Home() {
   if (decodedToken === null) {
     decodedToken = "";
   }
-  console.log(decodedToken)
   let member = (
     <p className="fs-3 welcome">
-      Welcome {decodedToken.user.name}, what do you want to buy today?
+      Welcome {decodedToken.name}, what do you want to buy today?
     </p>
   );
 

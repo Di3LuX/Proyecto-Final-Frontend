@@ -112,7 +112,7 @@ function ProfileDestroy() {
       <div className="row">
         <div className="col-12 d-flex flex-column justify-content-center align-items-center">
           <h1 className="text-light mb-3">
-            {decodedToken.name}, are you sure?
+            {decodedToken.user.name}, are you sure?
           </h1>
           <div className="errorInput mb-3 ft-5">
             {" "}

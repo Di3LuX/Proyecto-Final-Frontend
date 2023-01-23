@@ -23,15 +23,14 @@ function Profile() {
   if (localStorage.getItem("token") === null) {
     navigate("/");
   }
-  console.log(decodedToken.name)
 
-  if (decodedToken.rolIdRol === 2) {
+  if (decodedToken.user.role_id === 2) {
     return (
       <div className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
             <h1 className="text-light mb-3">
-              {decodedToken.name.toUpperCase()}, this is your special area.
+              {decodedToken.user.name.toUpperCase()}, this is your special area.
             </h1>
 
             <button text={"Modify profile"}
@@ -62,7 +61,7 @@ function Profile() {
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
             <h1 className="text-light mb-3">
-              {decodedToken.name.toUpperCase()}, this is your special area.
+              {decodedToken.user.name.toUpperCase()}, this is your special area.
             </h1>
 
             <button text={"Modify profile"}
