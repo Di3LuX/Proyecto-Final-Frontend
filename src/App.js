@@ -34,7 +34,6 @@ function App() {
             path="/objects"
             element={<Content title={"Objects"} type={"objects"} />} />
           <Route path="/content/:contentId" element={<ContentDetails />} />
-          <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>

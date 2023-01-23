@@ -16,11 +16,11 @@ function Navbar() {
 
   const ciaoBella = () => {
     dispatch(logout({ credentials: {} }));
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("token");
     return navigate("/");
   };
 
-  const localStorageToken = localStorage.getItem("jwt");
+  const localStorageToken = localStorage.getItem("token");
   let { decodedToken } = useJwt(localStorageToken);
   if (decodedToken === null) {
     decodedToken = { name: "" };
@@ -43,7 +43,7 @@ function Navbar() {
 
   if (
     userReduxCredentials?.credentials?.token !== undefined ||
-    localStorage.getItem("jwt") !== null
+    localStorage.getItem("token") !== null
   ) {
 
     // For Admins

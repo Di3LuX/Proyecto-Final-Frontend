@@ -9,7 +9,7 @@ function Profile() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const localStorageToken = localStorage.getItem("jwt");
+  const localStorageToken = localStorage.getItem("token");
   let { decodedToken } = useJwt(localStorageToken);
   if (decodedToken === null) {
     decodedToken = { name: "" };
@@ -17,12 +17,13 @@ function Profile() {
 
   const logout = () => {
     dispatch(logout({ credentials: {} }));
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("token");
     return navigate("/");
   };
-  if (localStorage.getItem("jwt") === null) {
+  if (localStorage.getItem("token") === null) {
     navigate("/");
   }
+  console.log(decodedToken.name)
 
   if (decodedToken.rolIdRol === 2) {
     return (

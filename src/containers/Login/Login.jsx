@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import { Input } from "antd";
 import { errorCheck } from "../../utils/useful";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { login } from "../../slices/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { userData, login } from "../../slices/userSlice";
 import { API } from "../../services/httpClient";
 import "./Login.css";
 
@@ -12,9 +13,19 @@ function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userReduxCredentials = useSelector(userData);
+
 
   const userLogin = async (body) => {
     let resp = await axios.post(`${API}/users/login`, body);
+    let token = resp.data.token;
+      let credentials = {
+        token: token,
+      };
+      dispatch(login({ credentials: credentials }));
+      localStorage.setItem("token", credentials.token);
+      navigate("/");
+    
     if (resp.data === "Password or email incorrect") {
       setUserError((prevState) => ({
         ...prevState,
@@ -26,16 +37,13 @@ function Login() {
         noEmail: "",
       }));
 
-      let jwt = resp.data.jwt;
+      let token = resp.data.token;
       let credentials = {
-        token: jwt,
+        token: token,
       };
       dispatch(login({ credentials: credentials }));
-      localStorage.setItem("jwt", credentials.token);
+      localStorage.setItem("token", credentials.token);
       navigate("/");
-      console.log(jwt)
-      console.log(credentials)
-      console.log(resp.data.jwt)
     }
   };
 
@@ -95,7 +103,14 @@ function Login() {
       [field + "Error"]: error,
     }));
   };
-
+  useEffect(() => {
+    if (
+      userReduxCredentials?.credentials?.token !== undefined ||
+      localStorage.getItem("token") !== null
+    ) {
+      navigate("/");
+    }
+  });
   return (
     <div className="container-fluid bg-black">
       <form

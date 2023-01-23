@@ -13,7 +13,7 @@ import "./ProfileDestroy.css";
 function ProfileDestroy() {
   const dispatch = useDispatch();
 
-  let localStorageToken = localStorage.getItem("jwt");
+  let localStorageToken = localStorage.getItem("token");
   let { decodedToken } = useJwt(localStorageToken);
 
   const [user, setUser] = useState({
@@ -51,7 +51,7 @@ function ProfileDestroy() {
 
   const logout = () => {
     dispatch(logout({ credentials: {} }));
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("token");
     return navigate("/");
   };
 

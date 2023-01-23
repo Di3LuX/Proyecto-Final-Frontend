@@ -13,7 +13,7 @@ export const ContentDetails = () => {
   const userReduxCredentials = useSelector(userData);
   const contentType = useSelector(contentData);
 
-  const localStorageToken = localStorage.getItem("jwt");
+  const localStorageToken = localStorage.getItem("token");
 
   const { contentId } = useParams();
 

@@ -13,7 +13,7 @@ import "./ProfileModify.css";
 function ProfileModify() {
   const dispatch = useDispatch();
 
-  let localStorageToken = localStorage.getItem("jwt");
+  let localStorageToken = localStorage.getItem("token");
   let { decodedToken } = useJwt(localStorageToken);
 
   const [user, setUser] = useState({
@@ -77,16 +77,16 @@ function ProfileModify() {
     let resp = await axios.put(`${API}/users/modify`, body, config);
 
     if (resp.data.message === "Data modified successfully") {
-      let jwt = resp.data.jwt;
+      let token = resp.data.token;
       let credentials = {
-        token: jwt,
+        token: token,
       };
 
       dispatch(logout({ credentials: {} }));
       dispatch(login({ credentials: credentials }));
 
-      localStorage.removeItem("jwt");
-      localStorage.setItem("jwt", credentials.token);
+      localStorage.removeItem("token");
+      localStorage.setItem("token", credentials.token);
 
       navigate("/");
     } else {
@@ -116,7 +116,7 @@ function ProfileModify() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("jwt") === null) {
+    if (localStorage.getItem("token") === null) {
       navigate("/");
     }
   });

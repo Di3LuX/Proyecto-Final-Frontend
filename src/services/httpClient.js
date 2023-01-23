@@ -1,14 +1,14 @@
 import axios from "axios";
 
-const jwt = localStorage.getItem("jwt");
+const token = localStorage.getItem("token");
 
-export const API = "https://proyecto-final-backend-production-a63f.up.railway.app";
+export const API = "http://localhost:3000";
 
 
 export const httpGet = async (content, target, criteria) => {
   try {
     let res = await axios.get(`${API}/${content}/${target}/${criteria}`, {
-      headers: { Authorization: "Bearer " + jwt },
+      headers: { Authorization: "Bearer " + token },
     });
     return res.data;
   } catch (error) {

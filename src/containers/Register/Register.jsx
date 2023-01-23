@@ -70,9 +70,8 @@ function Register() {
 
   const registerUser = async (body) => {
     let resp = await axios.post(`${API}/users/register`, body);
-    if
-      (resp.data === `${body.email} is now in our Data Base, congrats`) {
-      await userLogin(bodyLogin);
+    await userLogin(bodyLogin);
+    if (resp.data === `${body.email} is now in our Data Base, congrats`) {
     } else {
       setUserError((prevState) => ({
         ...prevState,
@@ -113,21 +112,21 @@ function Register() {
 
   const userLogin = async (bodyLogin) => {
     let resp = await axios.post(`${API}/users/login`, bodyLogin);
-
-    let jwt = resp.data.jwt;
+    let token = resp.data.token;
     let credentials = {
-      token: jwt,
+      token: token,
     };
 
     dispatch(login({ credentials: credentials }));
 
-    localStorage.setItem("jwt", credentials.token);
+    localStorage.setItem("token", credentials.token);
+    navigate("/")
   };
 
   useEffect(() => {
     if (
       userReduxCredentials?.credentials?.token !== undefined ||
-      localStorage.getItem("jwt") !== null
+      localStorage.getItem("token") !== null
     ) {
       navigate("/");
     }
@@ -206,6 +205,7 @@ function Register() {
           <div className="errorInput mb-3"> {userError.passwordError} </div>
 
           <div
+            onClick={sendBody}
             className={
               "links d-flex align-items-center GlitchButtonReflex"
             }
