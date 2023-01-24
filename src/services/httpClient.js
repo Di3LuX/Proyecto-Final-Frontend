@@ -27,10 +27,10 @@ export const httpGet2 = async (content, target, criteria, json) => {
   }
 };
 
-// export const getUsersAdmin = async (jwt) => {
+// export const getUsersAdmin = async (token) => {
 //   let data = await axios.get(`${API}/users/all`, {
 //     headers: {
-//       Authorization: "Bearer " + jwt,
+//       Authorization: "Bearer " + token,
 //     },
 //   });
 //   return data;

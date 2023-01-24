@@ -74,7 +74,7 @@ export const ContentDetails = () => {
 
   // if (
   //   userReduxCredentials?.credentials?.token !== undefined ||
-  //   localStorage.getItem("jwt") !== null
+  //   localStorage.getItem("token") !== null
   // ) {
   //   return (
   //     <div className="detailsContainer container-fluid vh-100 bg-black pt-5 d-flex flex-column justify-content-center mt-5 mt-lg-0 ">

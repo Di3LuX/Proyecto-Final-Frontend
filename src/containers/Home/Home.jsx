@@ -16,7 +16,7 @@ function Home() {
   }
   let member = (
     <p className="fs-3 welcome">
-      Welcome {decodedToken.user.name}, what do you want to buy today?
+      Welcome {"decodedToken.user.name"}, what do you want to buy today?
     </p>
   );
 

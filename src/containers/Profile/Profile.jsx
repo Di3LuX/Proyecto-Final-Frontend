@@ -24,13 +24,13 @@ function Profile() {
   }
 
   console.log(decodedToken)
-  if (decodedToken.user.role_id === 3) {
+  if ("decodedToken.user.role_id"=== 3) {
     return (
       <div className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
             <h1 className="text-light mb-3">
-              {decodedToken.user.name.toUpperCase()}, this is your special area.
+              {"decodedToken.user.name.toUpperCase()"}, this is your special area.
             </h1>
 
             <button text={"Modify profile"}
@@ -61,7 +61,7 @@ function Profile() {
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
             <h1 className="text-light mb-3">
-              {decodedToken.user.name.toUpperCase()}, this is your special area.
+              {"decodedToken.user.name.toUpperCase()"}, this is your special area.
             </h1>
 
             <button text={"Modify profile"}
