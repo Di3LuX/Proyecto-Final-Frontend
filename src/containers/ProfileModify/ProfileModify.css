@@ -5,3 +5,19 @@
 .errorInput {
   color: red;
 }
+
+.bgImg {
+  background-image: url(../../../public/profile\ modify-destroy.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.h1main {
+  color: white;
+  text-shadow: 0 0 5px gold;
+  background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
+  border: 0.2em solid goldenrod;
+  border-radius: 0.3em;
+  border-style: groove;
+  margin: 5vh 0;
+}

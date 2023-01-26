@@ -112,9 +112,9 @@ function Login() {
     }
   });
   return (
-    <div className="container-fluid bg-black">
+    <div className="loginContainer container-fluid">
       <form
-        className="mainContainer bg-black vh-100 d-flex justify-content-center align-items-center  mt-lg-0"
+        className="vh-100 d-flex justify-content-center align-items-center mt-lg-0"
         onSubmit={(e) => submitLogin(e)}
       >
         <div className="row mt-5 justify-content-center">

@@ -1,5 +1,5 @@
-.mainContainer{
-  background-image: url(../../../public/login-register.jpg);
+.registerContainer{
+  background-image: url(../../../public/register.jpg);
   background-size: cover;
 }
 

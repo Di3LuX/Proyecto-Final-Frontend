@@ -135,7 +135,7 @@ function Register() {
   return (
     <form
       onSubmit={sendBody}
-      className="mainContainer container-fluid bg-black vh-100 d-flex justify-content-center align-items-center margin-top-10vh">
+      className="registerContainer container-fluid bg-black vh-100 d-flex justify-content-center align-items-center margin-top-10vh">
       <div className="row">
         <div className="col-12 d-flex flex-column justify-content-center align-items-center">
 

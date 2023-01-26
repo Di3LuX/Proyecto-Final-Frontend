@@ -1,19 +1,73 @@
-.bgImage{
-  background-image: url(../../../public/wallpaper.jpg);
+.bgRed {
+  background-image: url(../../../public/wallpaperRed.jpg);
   background-size: cover;
+  background-position: center;
 }
 
-.h1main{
-  color: black;
-  height: 10vh;
-  background-color: green;
-  border-radius: 0.2em;
-  background: radial-gradient(green, transparent)
+.bgBlue {
+  background-image: url(../../../public/wallpaperBlue.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-.welcome{
-  height: 10vh;
-  background-color: green;
-  background: radial-gradient(green, transparent)
+.h1main {
+  color: white;
+  text-shadow: 0 0 5px gold;
+  background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
+  border: 0.2em solid goldenrod;
+  border-radius: 0.3em;
+  border-style: groove;
+  margin: 5vh 0;
+}
 
+.carrousel {
+  margin: 2em 0 2em 0;
+  border-radius: 5em;
+  border: 0.5em solid goldenrod;
+  border-style: groove;
+  height: 40vh;
+  width: 30vw;
+  background-size: cover;
+  background-position: center;
+}
+.textShadow{
+  background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
+  border: 0.05em solid goldenrod;
+  border-style: groove;
+  color: white;
+  text-shadow: 0 0 5px gold;
+}
+.poniter{
+  cursor: pointer;
+}
+
+.img1 {
+  background-image: url(../../../public/estates.jpg);
+  background-position: 0 122vh;
+}
+
+.img2 {
+  background-position: 0 70vh;
+  background-image: url(../../../public/vehicles.jpg);
+}
+
+.img3 {
+  background-position: 0 100vh;
+  background-image: url(../../../public/objects.jpg);
+}
+.boxLinks{
+  margin: 0 3vw 0 3vw;
+  background-size: cover;
+  background-position: center;
+  height: 15vh;
+  width: 15vw;
+}
+.boxVehicle{
+  background-image: url(../../../public/catapulta.jpg);
+}
+.boxEstate{
+  background-image: url(../../../public/town\ hall.jpg);
+}
+.boxObject{
+  background-image: url(../../../public/gold.jpg);
 }

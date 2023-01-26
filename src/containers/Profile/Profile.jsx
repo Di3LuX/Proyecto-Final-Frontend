@@ -19,34 +19,34 @@ function Profile() {
     localStorage.removeItem("token");
     return navigate("/");
   };
-  if (localStorage.getItem("token") === null) {
-    navigate("/");
-  }
+  // if (localStorage.getItem("token") === null) {
+  //   navigate("/");
+  // }
 
-  console.log(decodedToken)
-  if ("decodedToken.user.role_id"=== 3) {
+  if ("decodedToken.user.role_id" === 3) {
     return (
-      <div className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
+      <div className="bgImg container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <h1 className="text-light mb-3">
-              {"decodedToken.user.name.toUpperCase()"}, this is your special area.
+            <h1 className="">
+              {/* {"decodedToken.user.name.toUpperCase()"}, this is your special area. */}
+              user, this is your special area.
             </h1>
 
             <button text={"Modify profile"}
               onClick={() => navigate("/profilemodify")}
-              className={"buttonColor d-flex align-items-center "}>
+              className={"h1main d-flex align-items-center "}>
               Modify your info
             </button>
 
             <button text={"Delete account"}
               onClick={() => navigate("/profiledestroy")}
-              className={"d-flex align-items-center buttonColorRed1"}>
+              className={"d-flex align-items-center h1main"}>
               Destroy your Acount
             </button>
 
             <button onClick={() => logout()}
-              className={"d-flex align-items-center buttonColorRed2 GlitchButtonReflex"}
+              className={"d-flex align-items-center h1main"}
               text={"Log out"}>
               Au revoir
             </button>
@@ -57,21 +57,23 @@ function Profile() {
     );
   } else {
     return (
-      <div className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
+      <div className="bgImg container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <h1 className="text-light mb-3">
-              {"decodedToken.user.name.toUpperCase()"}, this is your special area.
+            <h1 className="h1main">
+              {/* {"decodedToken.user.name.toUpperCase()"}, this is your special area. */}
+              User, this is your special area.
+
             </h1>
 
             <button text={"Modify profile"}
               onClick={() => navigate("/profilemodify")}
-              className={"ButtonColor d-flex align-items-center "}>
+              className={"h1main d-flex align-items-center "}>
               Modify your info
             </button>
 
             <button onClick={() => logout()}
-              className={"d-flex align-items-center ButtonColorRed2 GlitchButtonReflex"}
+              className={"d-flex align-items-center h1main"}
               text={"Log out"}>
               Arrivederci
             </button>

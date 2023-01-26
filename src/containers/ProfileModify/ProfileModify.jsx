@@ -37,7 +37,7 @@ function ProfileModify() {
     username: user.username,
     name: user.name,
     location: user.location,
-    email: decodedToken.user.email,
+    email: user.email,
   };
 
   const updateUser = async (e) => {
@@ -115,20 +115,20 @@ function ProfileModify() {
     }));
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("token") === null) {
-      navigate("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (localStorage.getItem("token") === null) {
+  //     navigate("/");
+  //   }
+  // });
 
   return (
     <form
       onSubmit={(e) => updateUser(e)}
-      className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0"
+      className="bgImg container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0"
     >
       <div className="row">
         <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-          <h1 className="text-light mb-3">Modify your details</h1>
+          <h1 className="h1main text-light mb-3">Modify your details</h1>
           <div className="errorInput mb-3 ft-5">
             {" "}
             {userError.nocompletedError}{" "}
@@ -140,7 +140,7 @@ function ProfileModify() {
             onChange={(e) => inputHandler(e)}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "name")}
             type="text"
-            placeholder="Nombre"
+            placeholder="Name"
           />
 
           <div className="errorInput mb-3 ft-5"> {userError.nameError} </div>
@@ -150,7 +150,7 @@ function ProfileModify() {
             onChange={(e) => inputHandler(e)}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
             type="text"
-            placeholder="Apellido"
+            placeholder="Username"
           />
 
           <div className="errorInput mb-3"> {userError.surnameError} </div>
@@ -160,19 +160,22 @@ function ProfileModify() {
             onChange={(e) => inputHandler(e)}
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
             type="text"
-            placeholder="Dirección"
+            placeholder="Adress"
           />
 
           <div className="errorInput mb-3"> {userError.documentError} </div>
 
-          <button className={"d-flex align-items-center "}
+          <button className={"h1main d-flex align-items-center "}
+          
             text={"Accept"}
             onClick={(e) => updateUser(e)}>
+              <h3 className="text-light mb-3">Modify</h3>
           </button>
 
           <button text={"Go Back"}
             onClick={() => navigate("/profile")}
-            className={"buttonColor d-flex align-items-center GlitchButtonReflex"}>
+            className={"h1main d-flex align-items-center"}>
+              <h3 className="text-light mb-3">Go back</h3>
           </button>
           
         </div>

@@ -1,20 +1,57 @@
 
 .navbarDesign {
-  max-height: 10vh;
+  height: 5em;
   background-image: url(../../../public/navbar.jpg);
   background-size: cover;
+  background-position-y: 50vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+.woloLogo{
+  background: radial-gradient(yellow,goldenrod);
+  margin-left: 2em;
+  border: 0.1em solid goldenrod;
+  border-radius: 0.2em;
+  border-style: groove;
+}
+.sapnWhite{
+  color: white;
 
-.links {
-  color: greenyellow;
+}
+.sapnBlack{
+  color: black;
+
+}
+.sapnRed{
+  color: red;
+
+}
+.sapnBlue{
+  color: blue;
+}
+.loginLink {
+  margin-right: 1vh;
+  color: yellow;
+  background: radial-gradient(cyan, navy);
+  border: 0.1em solid goldenrod;
+  border-radius: 0.2em;
+  border-style: groove;
   font-size: 1.5em;
   cursor: pointer;
-  transition: color 1s linear;
+  text-shadow: 0 0 15px black;
+}
+.registerLink {
+  margin-left: 1vh;
+  color: goldenrod;
+  background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
+  border: 0.1em solid goldenrod;
+  border-radius: 0.2em;
+  border-style: groove;
+  font-size: 1.5em;
+  cursor: pointer;
   text-shadow: 0 0 15px black;
 }
 
-.links:hover {
+.navbarLinks:hover {
   transition: color 1s linear;
   color: green;
   text-shadow: 0 0 15px greenyellow;
@@ -31,7 +68,7 @@
 }
 
 .cursor-pointer {
-  color: greenyellow;
+  color: black;
   cursor: pointer;
 }
 .cursor-pointer:hover {
@@ -61,7 +98,7 @@
 }
 
 .dropdownMenuDesign {
-  background-color: #000 !important;
+  background-color: #fff !important;
 }
 
 .fontFamilyGillSans {
@@ -70,10 +107,10 @@
 }
 
 .dropdown-item:active {
-  background-color: red !important;
+  background-color: black !important;
 }
 .dropdown-item:hover {
-  background-color: red !important;
+  background-color: black !important;
 }
 
 @media (max-width: 800px) {
