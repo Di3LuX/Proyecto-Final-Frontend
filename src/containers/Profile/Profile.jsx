@@ -23,25 +23,25 @@ function Profile() {
   //   navigate("/");
   // }
 
-  if ("decodedToken.user.role_id" === 3) {
+  if ("decodedToken.user.role_id" === 2) {
     return (
       <div className="bgImg container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <h1 className="">
+            <h3 className="">
               {/* {"decodedToken.user.name.toUpperCase()"}, this is your special area. */}
               user, this is your special area.
-            </h1>
+            </h3>
 
             <button text={"Modify profile"}
               onClick={() => navigate("/profilemodify")}
-              className={"h1main d-flex align-items-center "}>
+              className="h1main d-flex align-items-center ">
               Modify your info
             </button>
 
             <button text={"Delete account"}
               onClick={() => navigate("/profiledestroy")}
-              className={"d-flex align-items-center h1main"}>
+              className="d-flex align-items-center h1main">
               Destroy your Acount
             </button>
 
@@ -60,20 +60,19 @@ function Profile() {
       <div className="bgImg container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <h1 className="h1main">
+            <h3 className="h1main">
               {/* {"decodedToken.user.name.toUpperCase()"}, this is your special area. */}
               User, this is your special area.
-
-            </h1>
+            </h3>
 
             <button text={"Modify profile"}
               onClick={() => navigate("/profilemodify")}
-              className={"h1main d-flex align-items-center "}>
+              className={"h1main d-flex align-items-center"}>
               Modify your info
             </button>
 
             <button onClick={() => logout()}
-              className={"d-flex align-items-center h1main"}
+              className={"h1main d-flex align-items-center"}
               text={"Log out"}>
               Arrivederci
             </button>

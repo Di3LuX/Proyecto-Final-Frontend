@@ -7,7 +7,7 @@
 }
 
 .bgImg {
-  background-image: url(../../../public/profile\ modify-destroy.jpg);
+  /* background-image: url(../../../public/modify-destroy.jpg); */
   background-size: cover;
   background-position: center;
 }
@@ -19,5 +19,4 @@
   border: 0.2em solid goldenrod;
   border-radius: 0.3em;
   border-style: groove;
-  margin: 5vh 0;
 }

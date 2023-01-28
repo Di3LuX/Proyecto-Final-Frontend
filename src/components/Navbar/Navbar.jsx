@@ -5,7 +5,7 @@ import { useJwt } from "react-jwt";
 import { useNavigate } from "react-router-dom";
 import { userData, logout } from "../../slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-import userIcon from "../../images/585e4bf3cb11b227491c339a.png";
+import userIcon from "../../images/wololo.jpg";
 import "./Navbar.css";
 
 function Navbar() {
@@ -36,6 +36,7 @@ function Navbar() {
           Profile Admin
         </Dropdown.Item>
       );
+      
     } else {
       return "";
     }
@@ -50,9 +51,9 @@ function Navbar() {
       <div className="navbarDesign container-fluid fixed-top">
         <div className=" row justify-content-around">
 
-        <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 ps-0 ps-lg-0">
-            <h1 onClick={() => navigate("/")} className="cursor-pointer">
-            <span className="sapnWhite">Wo</span><span className="sapnBlue">Lo</span><span className="sapnRed">Lo</span><span className="sapnBlack">PoP</span>
+          <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 ps-0 ps-lg-0">
+            <h1 onClick={() => navigate("/")} className="woloLogo cursor-pointer">
+              <span className="spanWhite">Wo</span><span className="spanBlue">Lo</span><span className="spanRed">Lo</span><span className="spanBlack">PoP</span>
             </h1>
           </div>
 
@@ -103,18 +104,18 @@ function Navbar() {
     // For Users
     <div className="navbarDesign container-fluid fixed-top">
       <div className=" row justify-content-around">
-        <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 pe-1 ps-lg-0">
-        <h1 onClick={() => navigate("/")} className="cursor-pointer woloLogo">
-          <span className="sapnWhite">Wo</span><span className="sapnBlue">Lo</span><span className="sapnRed">Lo</span><span className="sapnBlack">PoP</span>
+        <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 ps-0 ps-lg-0">
+          <h1 onClick={() => navigate("/")} className="woloLogo cursor-pointer">
+            <span className="spanWhite">Wo</span><span className="spanBlue">Lo</span><span className="spanRed">Lo</span><span className="spanBlack">PoP</span>
           </h1>
         </div>
         <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-4 pe-5 pe-lg-3">
           <ul className="listDesign d-flex justify-content-center">
             <li onClick={() => navigate("/login")} className="loginLink">
-              Login 
+              Login
             </li>
             <li onClick={() => navigate("/register")} className="registerLink">
-              Register 
+              Register
             </li>
           </ul>
         </div>

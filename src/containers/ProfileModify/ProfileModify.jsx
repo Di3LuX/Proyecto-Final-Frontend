@@ -122,62 +122,61 @@ function ProfileModify() {
   // });
 
   return (
-    <form
-      onSubmit={(e) => updateUser(e)}
-      className="bgImg container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0"
-    >
-      <div className="row">
-        <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-          <h1 className="h1main text-light mb-3">Modify your details</h1>
-          <div className="errorInput mb-3 ft-5">
-            {" "}
-            {userError.nocompletedError}{" "}
+    <form onSubmit={(e) => updateUser(e)}>
+      <div className="bgImg container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
+        <div className="row">
+          <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+            <h2 className="h1main text-light">Modify your details</h2>
+            <div className="errorInput mb-3 ft-5">
+              {" "}
+              {userError.nocompletedError}{" "}
+            </div>
+
+            <Input
+              name="name"
+              className="mt-5"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e.target.name, e.target.value, "name")}
+              type="text"
+              placeholder="Name"
+            />
+
+            <div className="errorInput mb-3 ft-5"> {userError.nameError} </div>
+
+            <Input
+              name="surname"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
+              type="text"
+              placeholder="Username"
+            />
+
+            <div className="errorInput mb-3"> {userError.surnameError} </div>
+
+            <Input
+              name="address"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
+              type="text"
+              placeholder="Adress"
+            />
+
+            <div className="errorInput mb-3"> {userError.documentError} </div>
+
+            <button className={"h1main d-flex align-items-center "}
+
+              text={"Accept"}
+              onClick={(e) => updateUser(e)}>
+              <h5 className="text-light">Modify</h5>
+            </button>
+
+            <button text={"Go Back"}
+              onClick={() => navigate("/profile")}
+              className={"h1main d-flex align-items-center"}>
+              <h5 className="text-light">Go back</h5>
+            </button>
+
           </div>
-
-          <Input
-            name="name"
-            className="mt-5"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "name")}
-            type="text"
-            placeholder="Name"
-          />
-
-          <div className="errorInput mb-3 ft-5"> {userError.nameError} </div>
-
-          <Input
-            name="surname"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-            type="text"
-            placeholder="Username"
-          />
-
-          <div className="errorInput mb-3"> {userError.surnameError} </div>
-
-          <Input
-            name="address"
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-            type="text"
-            placeholder="Adress"
-          />
-
-          <div className="errorInput mb-3"> {userError.documentError} </div>
-
-          <button className={"h1main d-flex align-items-center "}
-          
-            text={"Accept"}
-            onClick={(e) => updateUser(e)}>
-              <h3 className="text-light mb-3">Modify</h3>
-          </button>
-
-          <button text={"Go Back"}
-            onClick={() => navigate("/profile")}
-            className={"h1main d-flex align-items-center"}>
-              <h3 className="text-light mb-3">Go back</h3>
-          </button>
-          
         </div>
       </div>
     </form>

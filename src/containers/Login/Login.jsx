@@ -19,13 +19,13 @@ function Login() {
   const userLogin = async (body) => {
     let resp = await axios.post(`${API}/users/login`, body);
     let token = resp.data.token;
-      let credentials = {
-        token: token,
-      };
-      dispatch(login({ credentials: credentials }));
-      localStorage.setItem("token", credentials.token);
-      navigate("/");
-    
+    let credentials = {
+      token: token,
+    };
+    dispatch(login({ credentials: credentials }));
+    localStorage.setItem("token", credentials.token);
+    navigate("/");
+
     if (resp.data === "Password or email incorrect") {
       setUserError((prevState) => ({
         ...prevState,
@@ -114,19 +114,16 @@ function Login() {
   return (
     <div className="loginContainer container-fluid">
       <form
-        className="vh-100 d-flex justify-content-center align-items-center mt-lg-0"
+        className="vh-100 d-flex justify-content-center align-items-center mt-1"
         onSubmit={(e) => submitLogin(e)}
       >
-        <div className="row mt-5 justify-content-center">
+        <div className="row mt-1 justify-content-center">
           <div className="text col-12 d-flex flex-column justify-content-between align-items-center ps-2 pe-2">
-            <h1 className="text-light mb-3 pb-5 text-center">
-              If you have an account. Please{" "}
-              <span className="colortxt2"> login!</span>{" "}
-            </h1>
-
+            <h3 className="h1main d-flex justify-content-center align-items-center text-light mb-3 text-center">
+              If you have an account, {" "}
+              <span onClick={() => navigate("/login")}> login!</span>{" "}
+            </h3>
             <div className="errorInput mb-3 ft-5"> {userError.noEmail} </div>
-
-
             <Input
               className="inputs "
               name="email"
@@ -137,9 +134,7 @@ function Login() {
               type="email"
               placeholder="Email"
             />
-
             <div className="errorInput mb-3"> {userError.emailError} </div>
-
             <Input.Password
               className="inputs"
               name="password"
@@ -150,24 +145,26 @@ function Login() {
               type="password"
               placeholder="Password"
             />
-
             <div className="errorInput mb-3"> {userError.passwordError} </div>
             <div className="boton mt-5">
               <div
                 text={"Login"}
                 className={
-                  "links d-flex align-items-center"
+                  "d-flex align-items-center"
                 }
                 onClick={(e) => submitLogin(e)}
-              >Login!
+              >
+                <h1 className="login">
+                  Login!
+                </h1>
               </div>
             </div>
-            <h3 className="text-light text-center mb-5 mt-5">
+            <h3 className="text-center">
               If you don't have account yet, please{" "}
-              <span className="colortxt" onClick={() => navigate("/register")}>
+              <span onClick={() => navigate("/register")}>
                 register
               </span>{" "}
-              for <span className="colortxt2"> FREE!</span>
+              for <span className="colortxt"> FREE!</span>
             </h3>
           </div>
         </div>

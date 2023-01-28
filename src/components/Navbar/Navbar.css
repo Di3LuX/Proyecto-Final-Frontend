@@ -13,23 +13,22 @@
   border-radius: 0.2em;
   border-style: groove;
 }
-.sapnWhite{
+.spanWhite{
   color: white;
 
 }
-.sapnBlack{
+.spanBlack{
   color: black;
 
 }
-.sapnRed{
+.spanRed{
   color: red;
 
 }
-.sapnBlue{
+.spanBlue{
   color: blue;
 }
 .loginLink {
-  width: 10vw;
   text-align: center;
   margin-right: 1vh;
   color: navy;
@@ -39,11 +38,10 @@
   border-style: groove;
   font-size: 1.5em;
   cursor: pointer;
-  text-shadow: 0 0 15px blue;
+  text-shadow: 0 0 15px cyan;
 }
 .registerLink {
   text-align: center;
-  width: 10vw;
   margin-left: 1vh;
   color: goldenrod;
   background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
@@ -102,7 +100,7 @@
 }
 
 .dropdownMenuDesign {
-  background-color: #fff !important;
+  background-color: black !important;
 }
 
 .fontFamilyGillSans {
