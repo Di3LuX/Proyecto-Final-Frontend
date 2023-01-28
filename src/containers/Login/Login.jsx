@@ -159,7 +159,7 @@ function Login() {
                 </h1>
               </div>
             </div>
-            <h3 className="text-center">
+            <h3 className="h1main text-center">
               If you don't have account yet, please{" "}
               <span onClick={() => navigate("/register")}>
                 register

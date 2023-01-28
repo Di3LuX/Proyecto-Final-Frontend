@@ -56,7 +56,7 @@ export const errorCheck = (value, type, password1) => {
       }
 
     default:
-      console.log("Error. Report it to someone");
+      console.log("Error. Report it to someone! RUN!");
 
       break;
   }

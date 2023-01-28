@@ -16,26 +16,24 @@ function Home() {
     decodedToken = "";
   }
   let member = (
-    <h4 className="h1main">
-      {/* Welcome {"decodedToken.user.name"}, what do you want to buy today? */}
+    <h4 className="h1main d-flex align-items-center justify-content-center">
+      {/* Welcome {decodedToken.user.name}, what do you want to buy today? */}
       Welcome user, what do you want to buy today?
     </h4>
   );
 
   let foreigner = (
-    <h4 className="h1main">
+    <h4 className="h1main d-flex align-items-center justify-content-center">
       You need an <span className="poniter" onClick={() => navigate("/login")}>account</span> to buy here!
     </h4>
   );
-  // console.log(decodedToken.user)
-  // console.log(decodedToken.user.name)
-  // console.log(decodedToken.user.role_id)
-  // console.log(decodedToken.user.email)
+
   return (
     <div>
       <div className="container-fluid vh-120 d-flex align-items-center justify-content-around bgRed">
         <div className="row">
-          <div className="col mt-2 pe-1 pe-lg-3">
+          <div className="col"></div>
+          <div className="col-10 mt-2 pe-1 pe-lg-3">
             <Carousel fade>
               <Carousel.Item>
                 <div
@@ -66,8 +64,9 @@ function Home() {
               </Carousel.Item>
             </Carousel>
           </div>
+          <div className="col"></div>
           <div className="d-flex align-items-center justify-content-center">
-            <h3 className="h1main">
+            <h3 className="h1main d-flex align-items-center justify-content-center">
               Our prices will change you...
             </h3>
           </div>

@@ -25,7 +25,7 @@ export const ContentGrid = ({ search, info, type }) => {
         } else {
           setVehicles((prevVehicles) => prevVehicles.concat(data));
         }
-        setHasMore(type === "vehicles" ? page < 5 : page < 2);
+        setHasMore(type === "estates" ? page < 5 : page < 2);
         setIsLoading(false);
       });
     } else {
@@ -39,9 +39,7 @@ export const ContentGrid = ({ search, info, type }) => {
         );
     }
   }, [search, page]);
-  console.log(type)
-  console.log(vehicles.article_id)
-  console.log(info)
+
   if (true) <Spinner />;
 
   if (!isLoading && vehicles.length === 0)

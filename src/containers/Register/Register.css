@@ -1,6 +1,7 @@
 .registerContainer{
   background-image: url(../../../public/register.jpg);
   background-size: cover;
+  margin-top: 10vh;
 }
 
 .inputWidth {
@@ -8,5 +9,8 @@
 }
 
 .errorInput {
+  color: red;
+}
+.register{
   color: red;
 }

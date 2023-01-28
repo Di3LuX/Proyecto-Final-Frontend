@@ -14,8 +14,7 @@ export const ContentCard = ({ vehicles, type }) => {
         content: type,
       })
     );
-console.log(type)
-console.log(type.article_id)
+
     type === "vehicles"
     ? navigate(`/content/${vehicles.article_id}`)
     : navigate(`/content/${vehicles.article_id}`);

@@ -135,25 +135,20 @@ function Register() {
   return (
     <form
       onSubmit={sendBody}
-      className="registerContainer container-fluid bg-black vh-100 d-flex justify-content-center align-items-center margin-top-10vh">
+      className="registerContainer container-fluid bg-black vh-100 d-flex justify-content-center align-items-center">
       <div className="row">
         <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-
-          <h1 className="text-light mb-3">
+          <h2 className="text-light">
             Register on the largest buying and selling website in the world!
-          </h1>
-
+          </h2>
           <h3 className="text-light mb-5">
             You are about to enter a market that moves millions... {" "}
           </h3>
-
           <div className="errorInput mb-0 ft-5">
             {" "}
             {userError.nocompletedError}{" "}
           </div>
           <div className="errorInput mb-3 ft-5"> {userError.emailAlready} </div>
-
-
           <Input
             name="username"
             onChange={(e) => { inputHandler(e); }}
@@ -207,7 +202,7 @@ function Register() {
           <div
             onClick={sendBody}
             className={
-              "links d-flex align-items-center GlitchButtonReflex"
+              "register d-flex align-items-center GlitchButtonReflex"
             }
             text={"Register"}>Register!
           </div>

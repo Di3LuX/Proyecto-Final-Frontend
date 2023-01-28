@@ -27,7 +27,8 @@ function Navbar() {
   }
 
   const admin = () => {
-    if ("decodedToken.user.role_id" === 1) {
+    // (decodedToken.user.role_id === 1)
+    if ("decodedToken.user.role_id"=== 1) {
       return (
         <Dropdown.Item
           onClick={() => navigate("/profileAdmin")}
@@ -59,7 +60,7 @@ function Navbar() {
 
           <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
             <ul className="listDesign d-flex justify-content-center">
-              {/* <li className="pink fontsize1-5em ms-2">{"decodedToken.user.name"}</li> */}
+              {/* <li className="pink fontsize1-5em ms-2">Hola {decodedToken.user.name}</li> */}
               <li className="pink fontsize1-5em ms-2"></li>
               <Dropdown>
                 <Dropdown.Toggle

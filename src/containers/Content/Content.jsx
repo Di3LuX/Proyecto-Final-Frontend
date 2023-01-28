@@ -9,8 +9,7 @@ export const Content = ({ info, type }) => {
   const search = query.get("search");
 
   const debouncedSearch = useDebounce(search, 400);
-  console.log(info)
-  console.log(type)
+
   return (
     <ContentGrid
       info={info}

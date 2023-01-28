@@ -75,8 +75,8 @@
 }
 .cursor-pointer:hover {
   transition: color 1s linear;
-  color: green;
-  text-shadow: 0 0 15px greenyellow;
+  color: white;
+  text-shadow: 0 0 15px gold;
 }
 
 .fontsize1-5em {
@@ -124,12 +124,12 @@
 
 @keyframes colorChange {
   from {
-    color: greenyellow;
+    color: gold;
     text-shadow: 0 0 15px yellow;
   }
 
   to {
-    color: black;
+    color: withe;
     text-shadow: 0 0 15px yellow;
   }
 }

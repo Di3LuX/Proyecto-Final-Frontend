@@ -14,23 +14,25 @@ function Profile() {
   if (decodedToken === null) {
     decodedToken = "";
   }
-  const logout = () => {
+  const ciaoBella = () => {
     dispatch(logout({ credentials: {} }));
     localStorage.removeItem("token");
     return navigate("/");
   };
+
   // if (localStorage.getItem("token") === null) {
   //   navigate("/");
   // }
 
+  // (decodedToken.user.role_id === 2)
   if ("decodedToken.user.role_id" === 2) {
     return (
       <div className="bgImg container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <h3 className="">
-              {/* {"decodedToken.user.name.toUpperCase()"}, this is your special area. */}
-              user, this is your special area.
+            <h3 className="d-flex flex-column justify-content-center align-items-center">
+              {/* {decodedToken.user.name.toUpperCase()}, this is your special area. */}
+              User, this is your special area.
             </h3>
 
             <button text={"Modify profile"}
@@ -45,7 +47,8 @@ function Profile() {
               Destroy your Acount
             </button>
 
-            <button onClick={() => logout()}
+            <button
+              onClick={() => ciaoBella()}
               className={"d-flex align-items-center h1main"}
               text={"Log out"}>
               Au revoir
@@ -60,9 +63,9 @@ function Profile() {
       <div className="bgImg container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0 bgImage">
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <h3 className="h1main">
-              {/* {"decodedToken.user.name.toUpperCase()"}, this is your special area. */}
-              User, this is your special area.
+            <h3 className="h1main d-flex flex-column justify-content-center align-items-center">
+              {/* {decodedToken.user.name.toUpperCase()}, this is your special area. */}
+              Admin, this is your special area.
             </h3>
 
             <button text={"Modify profile"}
