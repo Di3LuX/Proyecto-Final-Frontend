@@ -2,7 +2,7 @@ import axios from "axios";
 
 const token = localStorage.getItem("token");
 
-export const API = "https://proyecto-final-backend.up.railway.app";
+export const API = "http://localhost:3000";
 
 
 export const httpGet = async (content, target, criteria) => {

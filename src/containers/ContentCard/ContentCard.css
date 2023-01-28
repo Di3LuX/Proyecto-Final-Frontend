@@ -12,7 +12,7 @@
 
 .contentImage {
   border-radius: 10%;
-  background-color: azure;
+  background-color: rgb(33, 179, 179);
   -webkit-box-shadow: 37px 26px 64px -16px rgba(87, 87, 87, 0.56);
   -moz-box-shadow: 37px 26px 64px -16px rgba(87, 87, 87, 0.56);
   box-shadow: 37px 26px 64px -16px rgba(87, 87, 87, 0.56);

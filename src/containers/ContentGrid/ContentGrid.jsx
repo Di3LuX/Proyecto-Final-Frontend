@@ -8,8 +8,8 @@ import { Search } from "../../components/Search/Search";
 import { httpGet } from "../../services/httpClient";
 import "./ContentGrid.css";
 
-export const ContentGrid = ({ search, title, type }) => {
-  const [estates, setEstates] = useState([]);
+export const ContentGrid = ({ search, info, type }) => {
+  const [vehicles, setVehicles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -18,18 +18,19 @@ export const ContentGrid = ({ search, title, type }) => {
     setIsLoading(true);
 
     if (!search) {
-      httpGet(type, "page", page).then((data) => {
-        if (estates.length < 5) {
-          setEstates(data);
+      httpGet(type, "article", page).then((data) => {
+        if (vehicles.length < 5) {
+          console.log(vehicles)
+          setVehicles(data);
         } else {
-          setEstates((prevEstates) => prevEstates.concat(data));
+          setVehicles((prevVehicles) => prevVehicles.concat(data));
         }
-        setHasMore(type === "estates" ? page < 5 : page < 2);
+        setHasMore(type === "vehicles" ? page < 5 : page < 2);
         setIsLoading(false);
       });
     } else {
-      httpGet(type, "type", search)
-        .then((data) => setEstates(data))
+      httpGet(type, "article", search)
+        .then((data) => setVehicles(data))
         .finally(
           setTimeout(() => {
             setIsLoading(false);
@@ -38,14 +39,16 @@ export const ContentGrid = ({ search, title, type }) => {
         );
     }
   }, [search, page]);
-
+  console.log(type)
+  console.log(vehicles.article_id)
+  console.log(info)
   if (true) <Spinner />;
 
-  if (!isLoading && estates.length === 0)
+  if (!isLoading && vehicles.length === 0)
     return (
       <div className="noResults mt-5 pt-5">
         <h1 className="contentHeader text-light">
-          Find what you want in <span className="direct">{title}</span>
+        All that you need here <span className="">{info}</span>
         </h1>
         <Search />
         <Empty />
@@ -56,21 +59,21 @@ export const ContentGrid = ({ search, title, type }) => {
     <div className="bg-black pt-5">
       <header className="contentHeader mt-5 pt-5">
         <h1 className="contentHeader text-light">
-          Find what you want in <span className="direct">{title}</span>
+        All that you want here <span className="">{info}</span>
         </h1>
 
         <Search />
       </header>
       <InfiniteScroll
         className="noOverflow"
-        dataLength={estates.length}
+        dataLength={vehicles.length}
         hasMore={hasMore}
         next={() => setPage((prevPage) => prevPage + 1)}
         loader={<Spinner />}
       >
         <ul className="contentGrid">
-          {estates.map((estate, index) => (
-            <ContentCard key={index} estate={estate} type={type} />
+          {vehicles.map((vehicles, index) => (
+            <ContentCard key={index} vehicles={vehicles} type={type} />
           ))}
         </ul>
       </InfiniteScroll>

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { contentType } from "../../slices/contentSlice";
 import "./ContentCard.css";
 
-export const ContentCard = ({ estate }) => {
+export const ContentCard = ({ vehicles, type }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -14,29 +14,20 @@ export const ContentCard = ({ estate }) => {
         content: type,
       })
     );
+console.log(type)
+console.log(type.article_id)
+    type === "vehicles"
+    ? navigate(`/content/${vehicles.article_id}`)
+    : navigate(`/content/${vehicles.article_id}`);
+};
 
-    switch (type) {
-      case "estates":
-        navigate(`/content/${estate.id}`);
-        break;
-      // case "vehicles":
-      //   navigate(`/content/${vehicle.cid}`);
-      //   break;
-      // case "objects":
-      //   navigate(`/content/${object.id}`)
-      // break;
-      default:
-        ;
-    }
-  };
+let info = "";
 
-  let type = "";
-
-  if (estate.type.length > 12) {
-    type = estate.type.slice(0, 12) + " ...";
-  } else {
-    type = estate.type;
-  }
+if (vehicles.length > 12) {
+  info = vehicles.info.slice(0, 12) + " ...";
+} else {
+  info = vehicles.info;
+}
 
   return (
     <li onClick={() => handlerRedux()} className="contentCard text-light ">
@@ -44,11 +35,11 @@ export const ContentCard = ({ estate }) => {
         width={230}
         height={345}
         className="contentImage"
-        src={estate.photo}
-        alt={estate.type}
+        src={vehicles.photo}
+        alt={vehicles.info}
       />
 
-      <div>{type}</div>
+      <div>{info}</div>
     </li>
   );
 };

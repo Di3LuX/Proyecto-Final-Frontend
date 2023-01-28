@@ -49,19 +49,17 @@ function Navbar() {
     return (
       <div className="navbarDesign container-fluid fixed-top">
         <div className=" row justify-content-around">
-          <div className="col col-lg-1 justify-content-center d-flex align-items-center ps-0 mt-0  ps-lg-3">
-          </div>
 
-          <div className="col d-xl-flex align-items-center d-none  justify-content-center pe-0 ps-0 pe-lg-5 mt-3 ">
+        <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 ps-0 ps-lg-0">
             <h1 onClick={() => navigate("/")} className="cursor-pointer">
-              Home
+            <span className="sapnWhite">Wo</span><span className="sapnBlue">Lo</span><span className="sapnRed">Lo</span><span className="sapnBlack">PoP</span>
             </h1>
           </div>
 
-          <div className="col col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
+          <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
             <ul className="listDesign d-flex justify-content-center">
               {/* <li className="pink fontsize1-5em ms-2">{"decodedToken.user.name"}</li> */}
-              <li className="pink fontsize1-5em ms-2">user</li>
+              <li className="pink fontsize1-5em ms-2"></li>
               <Dropdown>
                 <Dropdown.Toggle
                   className="dropDownDesign"
@@ -105,12 +103,12 @@ function Navbar() {
     // For Users
     <div className="navbarDesign container-fluid fixed-top">
       <div className=" row justify-content-around">
-        <div className="col-4 col-lg-1 justify-content-center d-flex align-items-center mt-2 ps-0 ps-lg-0">
+        <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 pe-1 ps-lg-0">
         <h1 onClick={() => navigate("/")} className="cursor-pointer woloLogo">
           <span className="sapnWhite">Wo</span><span className="sapnBlue">Lo</span><span className="sapnRed">Lo</span><span className="sapnBlack">PoP</span>
           </h1>
         </div>
-        <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
+        <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-4 pe-5 pe-lg-3">
           <ul className="listDesign d-flex justify-content-center">
             <li onClick={() => navigate("/login")} className="loginLink">
               Login 

@@ -42,7 +42,7 @@ export const ContentDetails = () => {
 
 
   let body = {
-    article: estate[0].articleIdArticles,
+    article: estate[0].article_id,
   };
 
   const addOrder = async () => {
@@ -55,7 +55,7 @@ export const ContentDetails = () => {
 
     const filteredArray = arrayResponse.filter(
       (order) =>
-        order.articleIdArticles === estate[0].articleIdArticles &&
+        order.article_id === estate[0].article_id &&
         order.returned === false
     );
 

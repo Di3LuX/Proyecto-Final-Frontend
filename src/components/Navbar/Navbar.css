@@ -1,7 +1,7 @@
 
 .navbarDesign {
   height: 5em;
-  background-image: url(../../../public/navbar.jpg);
+  background-image: url(../../../public/wallpaperBlue.jpg);
   background-size: cover;
   background-position-y: 50vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -29,17 +29,21 @@
   color: blue;
 }
 .loginLink {
+  width: 10vw;
+  text-align: center;
   margin-right: 1vh;
-  color: yellow;
-  background: radial-gradient(cyan, navy);
+  color: navy;
+  background: whitesmoke;
   border: 0.1em solid goldenrod;
   border-radius: 0.2em;
   border-style: groove;
   font-size: 1.5em;
   cursor: pointer;
-  text-shadow: 0 0 15px black;
+  text-shadow: 0 0 15px blue;
 }
 .registerLink {
+  text-align: center;
+  width: 10vw;
   margin-left: 1vh;
   color: goldenrod;
   background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
@@ -51,10 +55,10 @@
   text-shadow: 0 0 15px black;
 }
 
-.navbarLinks:hover {
+.loginLink:hover {
   transition: color 1s linear;
-  color: green;
-  text-shadow: 0 0 15px greenyellow;
+  color: navy;
+  text-shadow: 0 0 15px blue;
 }
 
 .listDesign {

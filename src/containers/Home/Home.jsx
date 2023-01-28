@@ -61,7 +61,7 @@ function Home() {
 
             <Carousel.Caption>
               <h3 className="textShadow">Are you looking for something new in your life and you don't know what it is?</h3>
-              <p onClick={() => navigate("/objects")} className="pointer textShadow">Find EVERYTHING you need in our database!</p>
+              <p onClick={() => navigate("/various")} className="pointer textShadow">Find EVERYTHING you need in our database!</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
@@ -82,7 +82,7 @@ function Home() {
                   <div className="col d-flex justify-content-around">
                     <div className="boxLinks boxVehicle" onClick={() => navigate("/vehicles")}><h6 className="textShadow">Vehicles</h6></div>
                     <div className="boxLinks boxEstate" onClick={() => navigate("/estates")}><h6 className="textShadow">Estates</h6></div>
-                    <div className="boxLinks boxObject" onClick={() => navigate("/objects")}><h6 className="textShadow">Objects</h6></div>
+                    <div className="boxLinks boxObject" onClick={() => navigate("/various")}><h6 className="textShadow">Various</h6></div>
                   </div>
                 </div>
               </div>

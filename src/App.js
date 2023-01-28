@@ -31,8 +31,8 @@ function App() {
             path="/estates"
             element={<Content title={"Estates"} type={"estates"} />} />
           <Route
-            path="/objects"
-            element={<Content title={"Objects"} type={"objects"} />} />
+            path="/various"
+            element={<Content title={"Various"} type={"various"} />} />
           <Route path="/content/:contentId" element={<ContentDetails />} />
         </Routes>
       </BrowserRouter>
