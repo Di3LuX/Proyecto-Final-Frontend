@@ -14,20 +14,16 @@ export const ContentCard = ({ vehicles, type }) => {
         content: type,
       })
     );
-
-    type === "vehicles"
-    ? navigate(`/content/${vehicles.article_id}`)
-    : navigate(`/content/${vehicles.article_id}`);
+    navigate(`/content/${vehicles.article_id}`)
 };
 
 let info = "";
 
-if (vehicles.length > 12) {
+if (vehicles.info > 12) {
   info = vehicles.info.slice(0, 12) + " ...";
 } else {
   info = vehicles.info;
 }
-
   return (
     <li onClick={() => handlerRedux()} className="contentCard text-light ">
       <img

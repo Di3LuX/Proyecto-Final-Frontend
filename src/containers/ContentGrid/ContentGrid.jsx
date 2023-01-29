@@ -24,12 +24,12 @@ export const ContentGrid = ({ search, info, type }) => {
         } else {
           setVehicles((prevVehicles) => prevVehicles.concat(data));
         }
-        console.log(vehicles)
+
         setHasMore(type === "article" ? page < 5 : page < 2);
         setIsLoading(false);
       });
     } else {
-      httpGet(type, "article", search)
+      httpGet(type, "info", search)
         .then((data) => setVehicles(data))
         .finally(
           setTimeout(() => {
@@ -43,10 +43,11 @@ export const ContentGrid = ({ search, info, type }) => {
   if (true) <Spinner />;
 
   if (!isLoading && vehicles === 0)
+
     return (
       <div className="noResults mt-5 pt-5">
         <h2 className="contentHeader text-light">
-          All <span className="">{type}</span> that you need here!
+          All <span className="">{info}</span> that you need here!
         </h2>
         <Search />
         <Empty />
@@ -57,14 +58,14 @@ export const ContentGrid = ({ search, info, type }) => {
     <div className="bg-black pt-5">
       <header className="contentHeader mt-5 pt-5">
         <h2 className="contentHeader text-light">
-          All <span className="">{type}</span> that you want here!
+          All <span className="">{info}</span> that you want here!
         </h2>
 
         <Search />
       </header>
       <InfiniteScroll
         className="noOverflow"
-        dataLength={vehicles.length}
+        dataLength={vehicles}
         hasMore={hasMore}
         next={() => setPage((prevPage) => prevPage + 1)}
         loader={<Spinner />}

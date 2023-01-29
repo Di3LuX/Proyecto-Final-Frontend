@@ -55,8 +55,7 @@ export const ContentDetails = () => {
 
     const filteredArray = arrayResponse.filter(
       (order) =>
-        order.article_id === estate[0].article_id &&
-        order.returned === false
+        order.article_id === estate[0].article_id
     );
 
     if (filteredArray.length > 0) {
@@ -72,36 +71,36 @@ export const ContentDetails = () => {
     }
   };
 
-  // if (
-  //   userReduxCredentials?.credentials?.token !== undefined ||
-  //   localStorage.getItem("token") !== null
-  // ) {
-  //   return (
-  //     <div className="detailsContainer container-fluid vh-100 bg-black pt-5 d-flex flex-column justify-content-center mt-5 mt-lg-0 ">
-  //       <div className="row  pt-5 justify-content-evenly mt-5 mt-lg-0 ">
-  //         <img
-  //           className="col-xl-3 col bg-black  detailImage mt-5 mt-lg-0"
-  //           src={estate[0].photo}
-  //           alt={estate[0].location}
-  //         />
-  //         <div className="col-xl-5  bg-black text-light d-flex flex-column justify-content-around bg-gray">
-  //           <h1>{estate[0].location}</h1>
-  //           <p className="mt-5 text-align-justify">{estate[0].info}</p>
-  //           <p>{estate[0].type}</p>
-  //           <button
-  //             text={"Order"}
-  //             className={
-  //               "d-flex align-items-center GlitchButtonReflex"
-  //             }
-  //             onClick={addOrder}>
+  if (
+    userReduxCredentials?.credentials?.token !== undefined ||
+    localStorage.getItem("token") !== null
+  ) {
+    return (
+      <div className="detailsContainer container-fluid vh-100 bg-black pt-5 d-flex flex-column justify-content-center mt-5 mt-lg-0 ">
+        <div className="row  pt-5 justify-content-evenly mt-5 mt-lg-0 ">
+          <img
+            className="col-xl-3 col bg-black  detailImage mt-5 mt-lg-0"
+            src={estate[0].photo}
+            alt={estate[0].location}
+          />
+          <div className="col-xl-5  bg-black text-light d-flex flex-column justify-content-around bg-gray">
+            <h1>{estate[0].location}</h1>
+            <p className="mt-5 text-align-justify">{estate[0].info}</p>
+            <p>{estate[0].type}</p>
+            <button
+              text={"Order"}
+              className={
+                "d-flex align-items-center GlitchButtonReflex"
+              }
+              onClick={addOrder}>
 
-  //           </button>
-  //           <div className="errorInput mb-3 ft-5"> {error} </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // } else {
+            </button>
+            <div className="errorInput mb-3 ft-5"> {error} </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
     return (
       <div className="detailsContainer container-fluid vh-100 bg-black pt-5 d-flex flex-column justify-content-center mt-5 mt-lg-0">
         <div className="row  pt-5 justify-content-evenly mt-5 mt-lg-0">
@@ -129,3 +128,4 @@ export const ContentDetails = () => {
       </div>
     );
   }
+}
