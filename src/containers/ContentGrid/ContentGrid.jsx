@@ -19,13 +19,13 @@ export const ContentGrid = ({ search, info, type }) => {
 
     if (!search) {
       httpGet(type, "article", page).then((data) => {
-        if (vehicles.length < 5) {
-          console.log(vehicles)
+        if (vehicles < 5) {
           setVehicles(data);
         } else {
           setVehicles((prevVehicles) => prevVehicles.concat(data));
         }
-        setHasMore(type === "estates" ? page < 5 : page < 2);
+        console.log(vehicles)
+        setHasMore(type === "article" ? page < 5 : page < 2);
         setIsLoading(false);
       });
     } else {
@@ -42,12 +42,12 @@ export const ContentGrid = ({ search, info, type }) => {
 
   if (true) <Spinner />;
 
-  if (!isLoading && vehicles.length === 0)
+  if (!isLoading && vehicles === 0)
     return (
       <div className="noResults mt-5 pt-5">
-        <h1 className="contentHeader text-light">
-        All that you need here <span className="">{info}</span>
-        </h1>
+        <h2 className="contentHeader text-light">
+          All <span className="">{type}</span> that you need here!
+        </h2>
         <Search />
         <Empty />
       </div>
@@ -56,9 +56,9 @@ export const ContentGrid = ({ search, info, type }) => {
   return (
     <div className="bg-black pt-5">
       <header className="contentHeader mt-5 pt-5">
-        <h1 className="contentHeader text-light">
-        All that you want here <span className="">{info}</span>
-        </h1>
+        <h2 className="contentHeader text-light">
+          All <span className="">{type}</span> that you want here!
+        </h2>
 
         <Search />
       </header>

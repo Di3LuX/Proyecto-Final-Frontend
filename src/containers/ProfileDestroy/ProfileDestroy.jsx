@@ -107,12 +107,13 @@ function ProfileDestroy() {
   return (
     <form
       onSubmit={(e) => destroyUser(e)}
-      className="container-fluid bg-black vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0"
+      className="container-fluid bgImg vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0"
     >
       <div className="row">
         <div className="col-12 d-flex flex-column justify-content-center align-items-center">
           <h1 className="text-light mb-3">
-            {"decodedToken.user.name"}, are you sure?
+            {/* {decodedToken.user.name}, are you sure? */}
+            {"User"}, are you sure?
           </h1>
           <div className="errorInput mb-3 ft-5">
             {" "}
@@ -145,13 +146,13 @@ function ProfileDestroy() {
 
           <button text={"Delete Account"}
             className={"buttonColorRed1 d-flex align-items-center "}
-            onClick={(e) => destroyUser(e)}>
+            onClick={(e) => destroyUser(e)}>Delete Account
 
           </button>
 
           <button text={"Go Back"}
             onClick={() => navigate("/profile")}
-            className={"buttonColor d-flex align-items-center GlitchButtonReflex"}>
+            className={"buttonColor d-flex align-items-center GlitchButtonReflex"}>Go Back
 
           </button>
 

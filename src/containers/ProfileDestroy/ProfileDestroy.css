@@ -5,3 +5,25 @@
 .errorInput {
   color: red;
 }
+.bgImg{
+  background-image: url(../../../public/modify-destroy.jpg);
+
+}
+.buttonColorRed1{
+  color: white;
+  text-shadow: 0 0 5px gold;
+  background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
+  border: 0.2em solid goldenrod;
+  border-radius: 0.2em;
+  border-style: groove;
+  height: 10vh;
+}
+.buttonColor{
+  color: white;
+  text-shadow: 0 0 5px gold;
+  background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
+  border: 0.2em solid goldenrod;
+  border-radius: 0.2em;
+  border-style: groove;
+  height: 10vh;
+}

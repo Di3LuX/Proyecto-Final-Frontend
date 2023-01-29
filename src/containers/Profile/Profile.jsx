@@ -41,12 +41,6 @@ function Profile() {
               Modify your info
             </button>
 
-            <button text={"Delete account"}
-              onClick={() => navigate("/profiledestroy")}
-              className="d-flex align-items-center h1main">
-              Destroy your Acount
-            </button>
-
             <button
               onClick={() => ciaoBella()}
               className={"d-flex align-items-center h1main"}
@@ -73,8 +67,12 @@ function Profile() {
               className={"h1main d-flex align-items-center"}>
               Modify your info
             </button>
-
-            <button onClick={() => logout()}
+            <button text={"Delete account"}
+              onClick={() => navigate("/profiledestroy")}
+              className="d-flex align-items-center h1main">
+              Destroy your Acount
+            </button>
+            <button onClick={() => ciaoBella()}
               className={"h1main d-flex align-items-center"}
               text={"Log out"}>
               Arrivederci
