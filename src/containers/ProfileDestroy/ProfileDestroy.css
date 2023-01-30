@@ -5,10 +5,9 @@
 .errorInput {
   color: red;
 }
-.bgImg{
+/* .bgImg{
   background-image: url(../../../public/modify-destroy.jpg);
-
-}
+} */
 .buttonColorRed1{
   color: white;
   text-shadow: 0 0 5px gold;

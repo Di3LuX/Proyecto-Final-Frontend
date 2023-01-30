@@ -24,7 +24,6 @@ export const ContentGrid = ({ search, info, type }) => {
         } else {
           setVehicles((prevVehicles) => prevVehicles.concat(data));
         }
-
         setHasMore(type === "article" ? page < 5 : page < 2);
         setIsLoading(false);
       });
@@ -71,8 +70,8 @@ export const ContentGrid = ({ search, info, type }) => {
         loader={<Spinner />}
       >
         <ul className="contentGrid">
-          {vehicles.map((vehicles, index) => (
-            <ContentCard key={index} vehicles={vehicles} type={type} />
+          {vehicles.map((vehicle, index) => (
+            <ContentCard key={index} vehicle={vehicle} type={type} />
           ))}
         </ul>
       </InfiniteScroll>
