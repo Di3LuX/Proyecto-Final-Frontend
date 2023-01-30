@@ -18,11 +18,11 @@ export const ContentCard = ({ vehicles, type }) => {
 };
 
 let info = "";
-
-if (vehicles.info > 12) {
+console.log(vehicles)
+if (vehicles > 12) {
   info = vehicles.info.slice(0, 12) + " ...";
 } else {
-  info = vehicles.info;
+  info = vehicles;
 }
   return (
     <li onClick={() => handlerRedux()} className="contentCard text-light ">
