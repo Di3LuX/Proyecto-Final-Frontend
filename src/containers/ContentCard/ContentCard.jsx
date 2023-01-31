@@ -4,25 +4,23 @@ import { useDispatch } from "react-redux";
 import { contentType } from "../../slices/contentSlice";
 import "./ContentCard.css";
 
-export const ContentCard = ({ vehicles, type }) => {
+export const ContentCard = ({ vehicle, kind }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handlerRedux = () => {
     dispatch(
       contentType({
-        content: type,
+        content: kind,
       })
     );
-    navigate(`/content/${vehicles.article_id}`)
+    navigate(`/content/${vehicle}`)
 };
-
-let info = "";
-console.log(vehicles)
-if (vehicles > 12) {
-  info = vehicles.info.slice(0, 12) + " ...";
+let type = "";
+if (vehicle > 12) {
+  type = vehicle.type.slice(0, 12) + " ...";
 } else {
-  info = vehicles;
+  type = vehicle.type;
 }
   return (
     <li onClick={() => handlerRedux()} className="contentCard text-light ">
@@ -30,11 +28,11 @@ if (vehicles > 12) {
         width={230}
         height={345}
         className="contentImage"
-        src={vehicles.photo}
-        alt={vehicles.info}
+        src={vehicle.photo}
+        alt={vehicle.type}
       />
 
-      <div>{info}</div>
+      <div>{type}</div>
     </li>
   );
 };

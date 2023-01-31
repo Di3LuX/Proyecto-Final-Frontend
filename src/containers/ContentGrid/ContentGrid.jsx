@@ -39,14 +39,7 @@ export const ContentGrid = ({ search, info, type }) => {
     }
     
   }, [search, page]);
-  console.log(vehicles)
-  const getVehicles = ()=> {
-    vehicles[0].map(vehicle => {
-      console.log(vehicle.type)
-      console.log(vehicle.photo)
-    })
-  }
-
+  
   if (true) <Spinner />;
 
   if (!isLoading && vehicles === 0)
@@ -62,38 +55,27 @@ export const ContentGrid = ({ search, info, type }) => {
     );
 
   return (
-    <div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <button onClick={getVehicles}>Click</button>
-    
+    <div className="bg-black pt-5">
+      <header className="contentHeader mt-5 pt-5">
+        <h2 className="contentHeader text-light">
+          All <span className="">{type}</span> that you want here!
+        </h2>
+
+        <Search />
+      </header>
+      <InfiniteScroll
+        className="noOverflow"
+        dataLength={vehicles}
+        hasMore={hasMore}
+        next={() => setPage((prevPage) => prevPage + 1)}
+        loader={<Spinner />}
+      >
+        <ul className="contentGrid">
+          {vehicles.map((vehicle, index) => (
+            <ContentCard key={index} vehicle={vehicle} type={type} />
+          ))}
+        </ul>
+      </InfiniteScroll>
     </div>
-
-    // <div className="bg-black pt-5">
-    //   <header className="contentHeader mt-5 pt-5">
-    //     <h2 className="contentHeader text-light">
-    //       All <span className="">{info}</span> that you want here!
-    //     </h2>
-
-    //     <Search />
-    //   </header>
-    //   <InfiniteScroll
-    //     className="noOverflow"
-    //     dataLength={vehicles}
-    //     hasMore={hasMore}
-    //     next={() => setPage((prevPage) => prevPage + 1)}
-    //     loader={<Spinner />}
-    //   >
-    //     <ul className="contentGrid">
-    //       {vehicles[0].map((vehicle, index) => (
-    //         <ContentCard key={index} vehicle={vehicle} type={type} />
-    //       ))}
-    //     </ul>
-    //   </InfiniteScroll>
-    // </div>
   );
 };
