@@ -24,7 +24,7 @@ function Home() {
 
   let foreigner = (
     <h4 className="h1main d-flex align-items-center justify-content-center">
-      You need an <span className="poniter" onClick={() => navigate("/login")}>account</span> to buy here!
+      You need an account to buy here!
     </h4>
   );
 
@@ -66,9 +66,9 @@ function Home() {
           </div>
           <div className="col"></div>
           <div className="d-flex align-items-center justify-content-center">
-            <h3 className="h1main d-flex align-items-center justify-content-center">
+            <h2 className="h1main d-flex align-items-center justify-content-center">
               Our prices will change you...
-            </h3>
+            </h2>
           </div>
           <div className="d-flex align-items-center justify-content-center">
             {decodedToken ? member : foreigner}

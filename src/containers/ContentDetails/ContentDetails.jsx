@@ -18,7 +18,7 @@ export const ContentDetails = () => {
   const { contentId } = useParams();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [estate, setEstate] = useState(null);
+  const [vehicle, setVehicle] = useState(null);
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ export const ContentDetails = () => {
   useEffect(() => {
     setIsLoading(true);
     httpGet(contentType.content, "id", contentId)
-      .then((data) => setEstate(data))
+      .then((data) => setVehicle(data))
       .finally(setIsLoading(false));
   }, [contentId, contentType.content]);
 
@@ -38,11 +38,11 @@ export const ContentDetails = () => {
       </div>
     );
 
-  if (!estate) return null;
+  if (!vehicle) return null;
 
 
   let body = {
-    article: estate[0].article_id,
+    article: vehicle[0].article_id,
   };
 
   const addOrder = async () => {
@@ -55,7 +55,7 @@ export const ContentDetails = () => {
 
     const filteredArray = arrayResponse.filter(
       (order) =>
-        order.article_id === estate[0].article_id
+        order.article_id === vehicle[0].article_id
     );
 
     if (filteredArray.length > 0) {
@@ -80,13 +80,13 @@ export const ContentDetails = () => {
         <div className="row  pt-5 justify-content-evenly mt-5 mt-lg-0 ">
           <img
             className="col-xl-3 col bg-black  detailImage mt-5 mt-lg-0"
-            src={estate[0].photo}
-            alt={estate[0].location}
+            src={vehicle[0].photo}
+            alt={vehicle[0].location}
           />
           <div className="col-xl-5  bg-black text-light d-flex flex-column justify-content-around bg-gray">
-            <h1>{estate[0].location}</h1>
-            <p className="mt-5 text-align-justify">{estate[0].info}</p>
-            <p>{estate[0].type}</p>
+            <h1>{vehicle[0].location}</h1>
+            <p className="mt-5 text-align-justify">{vehicle[0].info}</p>
+            <p>{vehicle[0].type}</p>
             <button
               text={"Order"}
               className={
@@ -106,13 +106,13 @@ export const ContentDetails = () => {
         <div className="row  pt-5 justify-content-evenly mt-5 mt-lg-0">
           <img
             className="col-xl-3 col bg-black  detailImage mt-5 mt-lg-0"
-            src={estate[0].photo}
-            alt={estate[0].location}
+            src={vehicle[0].photo}
+            alt={vehicle[0].location}
           />
           <div className="col-xl-5  bg-black text-light d-flex flex-column justify-content-around bg-gray pb-5">
-            <h1>{estate[0].location}</h1>
-            <p className="mt-5 text-align-justify">{estate[0].info}</p>
-            <p>{estate[0].type}</p>
+            <h1>{vehicle[0].location}</h1>
+            <p className="mt-5 text-align-justify">{vehicle[0].info}</p>
+            <p>{vehicle[0].type}</p>
             <h3>
               If you want to buy this article, please login or register
             </h3>

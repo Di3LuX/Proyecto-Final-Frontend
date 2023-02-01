@@ -14,7 +14,7 @@ export const ContentCard = ({ vehicle, kind }) => {
         content: kind,
       })
     );
-    navigate(`/content/${vehicle}`)
+    navigate(`${vehicle.article_id}`)
 };
 let type = "";
 if (vehicle > 12) {

@@ -27,8 +27,7 @@ function Navbar() {
   }
 
   const admin = () => {
-    // (decodedToken.user.role_id === 1)
-    if ("decodedToken.user.role_id"=== 1) {
+    if ("decodedToken.user.role_id" === 1) {
       return (
         <Dropdown.Item
           onClick={() => navigate("/profileAdmin")}
@@ -37,7 +36,7 @@ function Navbar() {
           Profile Admin
         </Dropdown.Item>
       );
-      
+
     } else {
       return "";
     }
@@ -60,8 +59,7 @@ function Navbar() {
 
           <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-3 pe-5 pe-lg-0">
             <ul className="listDesign d-flex justify-content-center">
-              {/* <li className="pink fontsize1-5em ms-2">Hola {decodedToken.user.name}</li> */}
-              <li className="pink fontsize1-5em ms-2"></li>
+              {/* <li className="pink fontsize1-5em ms-2">{decodedToken.user.username}</li> */}
               <Dropdown>
                 <Dropdown.Toggle
                   className="dropDownDesign"
@@ -105,16 +103,22 @@ function Navbar() {
     // For Users
     <div className="navbarDesign container-fluid fixed-top">
       <div className=" row justify-content-around">
-        <div className="col-4 col-lg-2 justify-content-center d-flex align-items-center mt-2 ps-0 ps-lg-0">
-          <h1 onClick={() => navigate("/")} className="woloLogo cursor-pointer">
-            <span className="spanWhite">Wo</span><span className="spanBlue">Lo</span><span className="spanRed">Lo</span><span className="spanBlack">PoP</span>
-          </h1>
-        </div>
-        <div className="col-8 col-lg-10 d-flex justify-content-end align-items-center mt-4 pe-5 pe-lg-3">
+        <div className="col-2 col-lg-1 d-flex justify-content-end align-items-center mt-3 pe-lg-3">
           <ul className="listDesign d-flex justify-content-center">
             <li onClick={() => navigate("/login")} className="loginLink">
               Login
             </li>
+          </ul>
+        </div>
+        <div className="col-2 col-lg-1 justify-content-center d-flex align-items-center mt-3 ps-0 ps-lg-0">
+          <ul className="listDesign d-flex justify-content-center">
+            <li onClick={() => navigate("/")} className="woloLogo cursor-pointer">
+              <span className="spanWhite">Wo</span><span className="spanBlue">Lo</span><span className="spanRed">Lo</span><span className="spanBlack">PoP</span>
+            </li>
+          </ul>
+        </div>
+        <div className="col-2 col-lg-1 d-flex justify-content-end align-items-center mt-3 pe-lg-3">
+          <ul className="listDesign d-flex justify-content-center">
             <li onClick={() => navigate("/register")} className="registerLink">
               Register
             </li>

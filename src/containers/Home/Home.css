@@ -16,7 +16,7 @@ container-fluid{
 
 .h1main {
   color: white;
-  text-shadow: 0 0 5px gold;
+  text-shadow: 10px 5px 10px gold;
   background: radial-gradient(rgba(255, 0, 0, 0.700), rgb(75, 0, 0));
   border: 0.2em solid goldenrod;
   border-radius: 0.2em;
