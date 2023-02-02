@@ -90,7 +90,7 @@ export const ContentDetails = () => {
             <button
               text={"Order"}
               className={
-                "d-flex align-items-center GlitchButtonReflex"
+                "d-flex align-items-center"
               }
               onClick={addOrder}>
 
@@ -119,7 +119,7 @@ export const ContentDetails = () => {
             <button
               text={"Login"}
               className={
-                "d-flex align-items-center GlitchButtonReflex"
+                "d-flex align-items-center"
               }
               onClick={() => navigate("/login")}>
             </button>

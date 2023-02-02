@@ -13,13 +13,13 @@ export const Search = () => {
 
 
   return (
-    <form className="searchForm  bg-black" onSubmit={handleSubmit}>
+    <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchBox ">
         <input
           autoFocus
           className="searchInput"
           type="text"
-          placeholder="Search by type..."
+          placeholder="What you want to search..."
           value={search ?? ""}
           onChange={(e) =>
             setSearchText({

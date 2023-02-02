@@ -39,7 +39,9 @@ function ProfileDestroy() {
         ...prevState,
         nocompletedError: "",
       }));
-      logout();
+      dispatch(logout({ credentials: {} }));
+      localStorage.removeItem("token");
+      return navigate("/");
     } else {
       setUserError((prevState) => ({
         ...prevState,
@@ -47,12 +49,6 @@ function ProfileDestroy() {
           "You must add your info to be able to destroy your account",
       }));
     }
-  };
-
-  const logout = () => {
-    dispatch(logout({ credentials: {} }));
-    localStorage.removeItem("token");
-    return navigate("/");
   };
 
   let validateInputs = () => {
@@ -67,7 +63,7 @@ function ProfileDestroy() {
   };
 
   const userDestroyed = async () => {
-    let resp = await axios.delete(`${API}/users/delete`, {
+    let resp = await axios.delete(`http://localhost:3000/users/delete`, {
       data: { email: user.email, password: user.password },
       headers: { Authorization: "Bearer " + localStorageToken },
     });

@@ -2,6 +2,7 @@
   text-align: center;
   font-size: 3rem;
   cursor: pointer;
+  color: black;
 }
 
 .contentGrid {
@@ -10,6 +11,7 @@
   justify-content: center;
   gap: 40px;
   padding: 40px;
+  color: black;
 }
 
 .noOverflow {
@@ -35,7 +37,10 @@
 
 .noResults {
   margin-top: 10vh;
-  background-color: black;
+}
+
+.bg{
+  background-color: rgba(141, 255, 255, 0.788);
 }
 
 @media (max-width: 560px) {

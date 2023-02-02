@@ -17,16 +17,16 @@ function ProfileModify() {
   let { decodedToken } = useJwt(localStorageToken);
 
   const [user, setUser] = useState({
-    username: "",
     name: "",
-    location: "",
+    username: "",
+    location: ""
   });
 
   const [userError, setUserError] = useState({
     nameError: "",
     usernameError: "",
     locationError: "",
-    nocompletedError: "",
+    nocompletedError: ""
   });
 
   if (decodedToken === null) {
@@ -34,10 +34,9 @@ function ProfileModify() {
   }
 
   const body = {
-    username: user.username,
     name: user.name,
+    username: user.username,
     location: user.location,
-    email: user.email,
   };
 
   const updateUser = async (e) => {
@@ -46,7 +45,7 @@ function ProfileModify() {
       userUpdater(body);
       setUserError((prevState) => ({
         ...prevState,
-        nocompletedError: "",
+        nocompletedError: ""
       }));
     } else {
       setUserError((prevState) => ({
@@ -71,24 +70,24 @@ function ProfileModify() {
   };
 
   const userUpdater = async (body) => {
+
     let config = {
       headers: { Authorization: "Bearer " + localStorageToken },
     };
-    let resp = await axios.put(`${API}/users/modify`, body, config);
-
-    if (resp.data.message === "Data modified successfully") {
+    let resp = await axios.put(`http://localhost:3000/users/modify`, body, config);
+    if ("resp.data.message") {
       let token = resp.data.token;
       let credentials = {
         token: token,
       };
+      
+      // dispatch(logout({ credentials: {} }));
+      // dispatch(login({ credentials: credentials }));
 
-      dispatch(logout({ credentials: {} }));
-      dispatch(login({ credentials: credentials }));
+      // localStorage.removeItem("token");
+      // localStorage.setItem("token", credentials.token);
 
-      localStorage.removeItem("token");
-      localStorage.setItem("token", credentials.token);
-
-      navigate("/");
+      // navigate("/");
     } else {
       setUserError((prevState) => ({
         ...prevState,
@@ -144,24 +143,24 @@ function ProfileModify() {
             <div className="errorInput mb-3 ft-5"> {userError.nameError} </div>
 
             <Input
-              name="surname"
+              name="username"
               onChange={(e) => inputHandler(e)}
-              onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
+              onBlur={(e) => errorHandler(e.target.username, e.target.value, "text")}
               type="text"
               placeholder="Username"
             />
 
-            <div className="errorInput mb-3"> {userError.surnameError} </div>
+            <div className="errorInput mb-3"> {userError.usernameError} </div>
 
             <Input
-              name="address"
+              name="location"
               onChange={(e) => inputHandler(e)}
-              onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
+              onBlur={(e) => errorHandler(e.target.location, e.target.value, "text")}
               type="text"
-              placeholder="Adress"
+              placeholder="Location"
             />
 
-            <div className="errorInput mb-3"> {userError.documentError} </div>
+            <div className="errorInput mb-3"> {userError.locationError} </div>
 
             <button className={"h1main d-flex align-items-center "}
 

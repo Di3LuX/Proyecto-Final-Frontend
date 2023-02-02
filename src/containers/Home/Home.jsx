@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <div>
-      <div className="container-fluid vh-120 d-flex align-items-center justify-content-around bgRed">
+      <div className="container-fluid vh-150 d-flex align-items-center justify-content-around bgRed">
         <div className="row">
           <div className="col"></div>
           <div className="col-10 mt-2 pe-1 pe-lg-3">
